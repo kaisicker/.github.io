@@ -1,24 +1,76 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Kai Sicker's Website</title>
-  </head>
-  <body>
-    <h1>Homepage von Kai Sicker</h1>
-    <p>hosted on github</p>
-    <p>
-      <form>
-      <input type = "button" value = "click me" onClick = "alert('Test');" />
-      </form>
-    </p>
-    This is a linebreak.<br /><br />
-    <script>
-      document.write('This text is displayed with javascript');
-    </script>
-    <p>This is a paragraph inside the body.</p>
-    <!-- This PHP code is not working because github doesn't run PHP. --> 
-    <?php
-      echo "this is php"; 
-    ?>
-  </body>
+<head>
+  <title>Greetings</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .checkbox-group {
+      margin-bottom: 20px;
+    }
+
+    .checkbox-group label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    p {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="checkbox-group">
+      <label for="checkbox1">
+        <input type="checkbox" id="checkbox1"> Show "Hello, World!"
+      </label>
+      <label for="checkbox2">
+        <input type="checkbox" id="checkbox2"> Show "Hello, Mars!"
+      </label>
+    </div>
+    <button onclick="handleClick()">Click me!</button>
+    <p id="output"></p>
+  </div>
+
+  <script>
+    function handleClick() {
+      const checkbox1 = document.getElementById('checkbox1');
+      const checkbox2 = document.getElementById('checkbox2');
+      const output = document.getElementById('output');
+
+      if (checkbox1.checked) {
+        output.textContent = 'Hello, World!';
+      } else if (checkbox2.checked) {
+        output.textContent = 'Hello, Mars!';
+      } else {
+        output.textContent = '';
+      }
+    }
+  </script>
+</body>
 </html>
